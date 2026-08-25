@@ -1,2 +1,2 @@
-store = [None for i in range(10)]
+store = [ x for x in range(10)]
 print(store)
