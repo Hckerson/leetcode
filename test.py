@@ -1,7 +1,6 @@
-x = []
+import math
 
-x[2] = 'a'
+x = [2, 1, 4, 0]
 
-x[5] = 'b'
-
-print(x)
+for i in range(len(x) - 1, -1, -1):
+    print(i)
