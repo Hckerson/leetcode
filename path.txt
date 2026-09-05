@@ -1,0 +1,14 @@
+- Arrays & Hashing 
+- Two Pointers 
+- Sliding Window 
+- Binary Search 
+- Stack(we will include monotonic stack too cos some problems need it) 
+- Linked Lists 
+- Trees (this one do come out very well, not sure sha) 
+- Heaps & Priority Queues 
+- Backtracking 
+- Graphs (we are supposed to take this with tree, but I don't want us to confuse them, that's why I put backtracking in the middle) 
+- DP (This one seems a bit difficult as we proceed, not sure thought) 
+- and finally Intervals. 
+ 
+> Note: DP and Backtracking is if time allows sha, I don't think it will be very imperative if we are not able to touch it)

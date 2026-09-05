@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Aderibigbe Emmanuel — Cover Letter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+  /* Master template. Every [bracketed slot] is highlighted and must be filled or deleted
+     before sending. Fits one page with the slots expanded — keep it that way. */
+  @page { size: Letter; margin: 0.68in 0.65in 0.5in; }
+
+  :root{
+    --ink:   #14171a;
+    --body:  #24282d;
+    --muted: #4a5058;
+    --link:  #1a4d8f;
+    --slot:  #fdf3c3;
+  }
+
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+
+  body{
+    font-family:"Lato","Segoe UI","Helvetica Neue",Arial,sans-serif;
+    font-size:9.7pt;
+    line-height:1.5;
+    color:var(--body);
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{ color:var(--link); text-decoration:underline; text-underline-offset:1.4px; }
+
+  /* ---------- header ---------- */
+  .name{
+    font-size:19pt; font-weight:900; letter-spacing:.02em;
+    color:var(--ink); line-height:1; margin:0 0 5pt;
+  }
+  .contact{ font-size:8.6pt; color:var(--muted); margin:0 0 5pt; }
+  .contact .sep{ color:#9aa1a9; padding:0 2.4pt; }
+  .rule{ border:0; border-top:1pt solid var(--ink); margin:0 0 13pt; }
+
+  /* ---------- letter body ---------- */
+  p{ margin:0 0 8.5pt; text-align:justify; }
+  .block{ margin:0 0 9pt; line-height:1.45; }
+  .block div{ margin:0; }
+  .salutation{ margin:0 0 8.5pt; }
+  .signoff{ margin:10pt 0 0; }
+  .signature{ font-weight:700; color:var(--ink); margin:12pt 0 0; }
+
+  code{ font-family:"Consolas","SFMono-Regular",Menlo,monospace; font-size:9.2pt; color:var(--ink); }
+  em{ font-style:italic; }
+
+  /* ---------- fill-in slots ---------- */
+  .slot{ background:var(--slot); box-decoration-break:clone; -webkit-box-decoration-break:clone; }
+
+  /* ---------- pre-send checklist ---------- */
+  .note{
+    margin-top:14pt; padding-top:7pt;
+    border-top:.8pt dashed #b9bfc7;
+    font-size:8.3pt; line-height:1.45; color:var(--muted);
+  }
+  .note b{ color:var(--ink); }
+</style>
+</head>
+<body>
+
+  <div class="name">ADERIBIGBE EMMANUEL</div>
+  <div class="contact">
+    Ikeja, Lagos, Nigeria <span class="sep">•</span>
+    +234&nbsp;913&nbsp;246&nbsp;3467 <span class="sep">•</span>
+    <a href="mailto:emmanueladeribigbe415@gmail.com">emmanueladeribigbe415@gmail.com</a> <span class="sep">•</span>
+    <a href="https://github.com/Hckerson">GitHub</a> <span class="sep">•</span>
+    <a href="https://hckerson.vercel.app">Portfolio</a>
+  </div>
+  <hr class="rule">
+
+  <div class="block"><span class="slot">[DATE — e.g. 3 September 2026]</span></div>
+
+  <div class="block">
+    <div><span class="slot">[Hiring Manager's name, if you can find it]</span></div>
+    <div><span class="slot">[Team or department]</span></div>
+    <div><span class="slot">[Company name]</span></div>
+    <div><span class="slot">[City, Country]</span></div>
+  </div>
+
+  <p class="salutation">Dear <span class="slot">[Name — or "Hiring Team" if you genuinely cannot find one]</span>,</p>
+
+  <p>I am applying for the <span class="slot">[exact role title from the posting]</span> internship at
+  <span class="slot">[Company]</span>, which I found via <span class="slot">[where you saw it]</span>. I am a Computer
+  Science undergraduate at Obafemi Awolowo University, and I have spent the past year working as a full-stack
+  developer alongside the degree — so I would be joining you already used to shipping code that other people
+  depend on.</p>
+
+  <p>Most of that time has gone into an OAuth&nbsp;2.0 / OIDC identity provider at Tekcify, where I own two-factor
+  authentication across six services and work on the authorize endpoint itself. Sessions there had no real expiry —
+  authorize was re-minting the 30-day cookie on every visit — so I stamped <code>auth_time</code> into the session JWT,
+  honoured client-requested <code>max_age</code>, and closed the account-chooser path that had been slipping past it. I
+  also closed two ways a login could be redirected somewhere it should not go: an unvalidated
+  <code>redirect_uri</code>, and a base URL read from a spoofable <code>Origin</code> header that was also seeding the
+  social-login trust set.</p>
+
+  <p>In parallel I work on Vouchmark, a KYB and trust-scoring platform for African markets, across its backend,
+  frontend and admin services. The work I am proudest of there was making the wallet ledger the single source of
+  truth for money and capping open checkouts at one with a partial unique index over (user, purpose, amount), so a
+  user cannot open several checkouts and pay each of them separately. Webhook replay was already handled; the
+  charges were being created upstream of it. That is most of what I now believe about money in software: the number
+  has to be provable, not merely computed.</p>
+
+  <p>I build my own systems for the same reason. Keyhold is a peer-to-peer property marketplace where I gated escrow
+  release by both role and time — the buyer or an admin may release at any point, the seller only once the inspection
+  window has closed — and made settlement move escrow, transaction and property status together, so a completed
+  sale cannot leave the listing browsable. Waypoint is a trip booking platform built on the Amadeus GDS, where I moved
+  money off <code>Float</code> to <code>Decimal(14,2)</code> after a total computed as price × travellers turned out to
+  accumulate binary drift on every multiplication, and where seat inventory is decided inside the booking transaction
+  so two concurrent bookings cannot oversell a departure.
+  <span class="slot">[Name whichever of the two is closest to what this company does, and say in one sentence what it
+  has in common with their problem.]</span></p>
+
+  <p><span class="slot">[WHY THIS COMPANY — two or three sentences, and the part you must not fake. Name something
+  specific: a product decision, a technology in their stack you have used, an engineering blog post, the problem
+  domain. Then say what you want to learn from them. If you cannot fill this in honestly, you have not researched the
+  company enough to apply.]</span></p>
+
+  <p>I graduate in 2028 and am looking for an internship where I can work on production systems alongside engineers
+  more experienced than me. I would welcome the chance to talk about the role, and I am available
+  <span class="slot">[your availability window]</span>. Thank you for your time and consideration.</p>
+
+  <p class="signoff">Yours sincerely,</p>
+  <div class="signature">Aderibigbe Emmanuel</div>
+
+  <div class="note"><b>Before sending — delete this box and every highlighted slot.</b> Address a named person wherever
+  you can find one; "Hiring Team" is the fallback, never "To Whom It May Concern". Keep it to one page. Send as PDF,
+  named <em>Aderibigbe-Emmanuel-Cover-Letter-[Company].pdf</em>. The fifth paragraph is the only part a reader can tell
+  you wrote for them specifically — it is worth more than the other five combined.</div>
+
+</body>
+</html>

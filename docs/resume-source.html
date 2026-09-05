@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Aderibigbe Emmanuel — Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+  /* Body type is LOCKED at 9pt. Fit is managed by wording, leading and spacing — never font-size.
+     Every bullet is written to land on two lines. */
+  @page { size: Letter; margin: 0.42in 0.55in 0.38in 0.55in; }
+
+  :root{
+    --ink:   #14171a;
+    --body:  #24282d;
+    --muted: #4a5058;
+    --link:  #1a4d8f;
+  }
+
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+
+  body{
+    font-family:"Lato","Segoe UI","Helvetica Neue",Arial,sans-serif;
+    font-size:9pt;
+    line-height:1.38;
+    color:var(--body);
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{ color:var(--link); text-decoration:underline; text-underline-offset:1.4px; }
+
+  /* ---------- header ---------- */
+  .name{
+    font-size:20pt; font-weight:900; letter-spacing:.01em;
+    color:var(--ink); line-height:1; margin:0 0 4pt;
+  }
+  .contact{ font-size:8.5pt; color:var(--muted); margin:0 0 9pt; }
+  .contact .sep{ color:#9aa1a9; padding:0 2.4pt; }
+
+  /* ---------- sections ---------- */
+  h2{
+    font-size:8.4pt; font-weight:700; letter-spacing:.155em;
+    text-transform:uppercase; color:var(--ink);
+    margin:0 0 3.6pt; padding-bottom:2pt;
+    border-bottom:.85pt solid var(--ink);
+  }
+  section{ margin-bottom:8pt; }
+  section:last-child{ margin-bottom:0; }
+
+  /* ---------- entries ---------- */
+  .entry{ margin-bottom:6.5pt; }
+  .entry:last-child{ margin-bottom:0; }
+
+  .row{ display:flex; justify-content:space-between; align-items:baseline; gap:10pt; }
+  .role{ font-weight:700; color:var(--ink); }
+  .role .org{ font-weight:400; font-style:italic; }
+  .role .sub{ font-weight:400; }
+  .meta{ font-size:8.5pt; color:var(--muted); white-space:nowrap; }
+  .stack{ font-style:italic; font-size:8.6pt; color:var(--muted); margin:1pt 0 0; }
+
+  /* ---------- bullets ---------- */
+  ul{ margin:3pt 0 0; padding:0; list-style:none; }
+  li{ position:relative; padding-left:9.5pt; margin-bottom:3.2pt; }
+  li:last-child{ margin-bottom:0; }
+  li::before{
+    content:""; position:absolute; left:1.6pt; top:.5em;
+    width:2.4pt; height:2.4pt; border-radius:50%; background:var(--muted);
+  }
+
+  code{ font-family:"Consolas","SFMono-Regular",Menlo,monospace; font-size:8.5pt; color:var(--ink); }
+  em{ font-style:italic; }
+
+  /* ---------- key/value rows ---------- */
+  .kv{ display:flex; gap:7pt; margin-top:2pt; }
+  .kv .k{ font-weight:700; color:var(--ink); flex:0 0 auto; min-width:90pt; }
+  .kv .v{ flex:1 1 auto; }
+</style>
+</head>
+<body>
+
+  <div class="name">ADERIBIGBE EMMANUEL</div>
+  <div class="contact">
+    Ikeja, Lagos, Nigeria <span class="sep">•</span>
+    +234 913 246 3467 <span class="sep">•</span>
+    <a href="mailto:emmanueladeribigbe415@gmail.com">emmanueladeribigbe415@gmail.com</a> <span class="sep">•</span>
+    <a href="https://github.com/Hckerson">GitHub</a> <span class="sep">•</span>
+    <a href="https://www.linkedin.com/in/hckerson">LinkedIn</a> <span class="sep">•</span>
+    <a href="https://hckerson.vercel.app">Portfolio</a>
+  </div>
+
+  <section>
+    <h2>Summary</h2>
+    <div>Computer Science undergraduate at Obafemi Awolowo University, working professionally as a backend engineer
+    alongside the degree. Mostly TypeScript — NestJS, PostgreSQL, Prisma — with the past year spent inside an
+    OAuth&nbsp;2.0 / OIDC identity provider and the products built on it. I work on the parts of a system where money,
+    access control and session state have to be exactly right. Seeking a software engineering internship.</div>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="row">
+      <div class="role">B.Sc. Computer Science — <span class="org">Obafemi Awolowo University</span>, Ile-Ife</div>
+      <div class="meta">2023 – Expected 2028</div>
+    </div>
+    <div class="kv"><div class="k">CGPA:</div><div class="v">4.67 / 5.00</div></div>
+    <div class="kv"><div class="k">Coursework:</div><div class="v">Data Structures &amp; Algorithms, Database Systems, Operating Systems, Computer Networks</div></div>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+
+    <div class="entry">
+      <div class="row">
+        <div class="role">Full-Stack Engineer — <span class="org">Tekcify</span></div>
+        <div class="meta">Remote &nbsp;|&nbsp; Oct 2025 – Present</div>
+      </div>
+      <div class="stack">OAuth 2.0 / OIDC identity provider, hosted auth UI, multi-product admin platform and account dashboard</div>
+      <ul>
+        <li>Own two-factor auth across six services: enrollment stages the TOTP secret and arms only on a verify-setup
+        code, and lost-authenticator recovery proves email plus password, then burns its single-use token.</li>
+
+        <li>Gave sessions a real expiry — authorize had re-minted the 30-day cookie on every visit. Stamped
+        <code>auth_time</code> into the session JWT, honoured <code>max_age</code>, and closed the account-chooser bypass.</li>
+
+        <li>Principal contributor to the internal admin platform: NestJS backend, Next.js console, access guards,
+        redaction-aware audit interceptors, RBAC, and an HMAC-signed route gate that fails closed on unresolvable MFA.</li>
+
+        <li>Closed two redirect-hijacking paths in authorize — an unvalidated <code>redirect_uri</code>, and a base URL
+        read from spoofable <code>Origin</code> / <code>X-Forwarded-Host</code> that also seeded the social-login trust set.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="row">
+        <div class="role">Full-Stack Developer — <span class="org">Vouchmark</span></div>
+        <div class="meta">Remote &nbsp;|&nbsp; Sep 2025 – Present</div>
+      </div>
+      <ul>
+        <li>Made the wallet ledger the single source of truth for money: a partial unique index over (user, purpose,
+        amount) caps open checkouts at one, and a persisted gateway mode stops test charges crediting wallets that
+        spend against live vendor APIs.</li>
+
+        <li>Unified two independently maintained trust scores into one derived value, storing the monitoring adjustment
+        separately so resynchronisation is idempotent and clamping cannot silently discard penalties.</li>
+
+        <li>Built the embeddable reputation widget's security model — per-widget CSP <code>frame-ancestors</code>,
+        <code>postMessage</code> pinned to the embedding origin, CSRF on the Google OAuth flow.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+
+    <div class="entry">
+      <div class="row">
+        <div class="role">Keyhold <span class="sub">— Peer-to-Peer Property Marketplace</span></div>
+        <div class="meta">2026</div>
+      </div>
+      <div class="stack">NestJS · TypeScript · PostgreSQL · Prisma · Stripe · Next.js · React Query</div>
+      <ul>
+        <li>Gated escrow release by role and time — the seller only once the inspection window closes — and made
+        settlement atomic across escrow, transaction and property status. Tests written against acceptance criteria
+        caught a release that could fire twice.</li>
+        <li>Modelled offers as a guarded state machine with authorisation enforced per transition, and built the
+        frontend solo over a typed API layer with a Zod schema per resource.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="row">
+        <div class="role">Waypoint <span class="sub">— Trip Booking Platform</span></div>
+        <div class="meta">2026</div>
+      </div>
+      <div class="stack">NestJS · TypeScript · PostgreSQL · Prisma · Amadeus GDS · ECharts · Next.js</div>
+      <ul>
+        <li>Integrated the Amadeus GDS behind a <code>TravelProvider</code> interface, and moved money off
+        <code>Float</code> to <code>Decimal(14,2)</code>: a total computed as price × travellers had accumulated
+        binary drift on every multiplication. The provider is handed whole minor units.</li>
+        <li>Decided seat inventory inside the booking transaction with a conditional decrement, so concurrent bookings
+        cannot oversell a departure and a waitlisted cancellation cannot invent seats that were never taken.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Technical Skills</h2>
+    <div class="kv"><div class="k">Languages:</div><div class="v">TypeScript, JavaScript, Go, SQL</div></div>
+    <div class="kv"><div class="k">Backend:</div><div class="v">NestJS, Node.js, Express, PostgreSQL, Prisma, Drizzle, REST APIs, Redis, Jest &amp; Vitest</div></div>
+    <div class="kv"><div class="k">Identity &amp; Security:</div><div class="v">OAuth 2.0 / OIDC, PKCE, JWT &amp; JWKS, RBAC, TOTP MFA, WebAuthn passkeys, CSP &amp; CSRF, Stripe</div></div>
+    <div class="kv"><div class="k">Frontend &amp; Tools:</div><div class="v">React, Next.js, Tailwind CSS, React Query, Zustand · Git, Docker, Vercel, Swagger</div></div>
+  </section>
+
+</body>
+</html>
