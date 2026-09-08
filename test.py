@@ -1,5 +1,8 @@
-import math
+def hash_function(value):
+    sum_of_chars = 0
+    for char in value:
+        sum_of_chars += ord(char)
 
-x = [100, 4, 200, 1, 3, 2]
-y = list(set(sorted(x)))
-print(y)
+    return sum_of_chars % 10
+
+print("'Bob' has hash code:",hash_function('Bob'))
