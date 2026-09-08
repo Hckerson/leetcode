@@ -1,8 +1,3 @@
-def hash_function(value):
-    sum_of_chars = 0
-    for char in value:
-        sum_of_chars += ord(char)
-
-    return sum_of_chars % 10
-
-print("'Bob' has hash code:",hash_function('Bob'))
+key = "uh4nk3j4"
+total = sum(ord(char) for char in key)
+print(total)
