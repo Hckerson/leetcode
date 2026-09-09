@@ -6,9 +6,9 @@ class Solution:
 
         store = {}
 
-        for i in range(len(nums)):
-            if store.get(nums[i]) is None:
-                store[nums[i]] = nums[i]
+        for num in nums:
+            if store.get(num) is None:
+                store[num] = num
             else:
                 return True
         return False

@@ -5,15 +5,16 @@ y = [1, 1, 1, 1]
 
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
-        result = [1] * len(nums)
+        length = len(nums)
+        result = [1] * length
 
         prefix = 1
-        for i in range(len(nums)):
+        for i in range(length):
             result[i] = prefix
             prefix *= nums[i]
 
         suffix = 1
-        for i in range(len(nums) - 1, -1, -1):
+        for i in range(length - 1, -1, -1):
             result[i] *= suffix
             suffix *= nums[i]
 
