@@ -1,6 +1,6 @@
 from typing import List
 
-x = [9, 0, 2]
+x = [2, 9, 0, 2]
 
 
 class Solution:
