@@ -1,6 +1,6 @@
 from typing import List
 
-x = [1, 2, 3, 2, 4]
+x = [2, 9, 0, 2]
 
 
 class Solution:
@@ -11,10 +11,10 @@ class Solution:
 
         for num in nums:
             prefix += num
-            count += seen.get(prefix - k)
+            count += seen.get(prefix - k, 0)
             seen[prefix] = seen.get(prefix, 0) + 1
 
         return count
 
 solver = Solution()
-print(solver.subarraySum(x, 3))
+print(solver.subarraySum(x, 2))
