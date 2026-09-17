@@ -1,2 +1,2 @@
-for i in range(0):
-    print("fuck")
+s = "struc"
+print(s.split(""))
