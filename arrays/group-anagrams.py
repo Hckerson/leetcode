@@ -1,18 +1,19 @@
 from typing import List
-
+from collections import defaultdict
 """
 Given an array of strings strs, group the anagrams together. You can return the answer in any order.
 """
 
+
 class Solution:
+
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        groups = {}
+        grouped = defaultdict(list)
 
-        for word in strs:
-            sorted_char = "".join(sorted(word))
-            groups.setdefault(sorted_char, []).append(word)
-        return list(groups.values())
+        for str in strs:
+            grouped["".join(sorted(str))].append(str)
 
+        return list(grouped.values())
 
 x = Solution()
-print(x.groupAnagrams(["eat","tea","tan","ate","nat","bat"]))
+print(x.groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]))
