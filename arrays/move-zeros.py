@@ -10,13 +10,14 @@ Note that you must do this in-place without making a copy of the array.
 class Solution:
 
     def moveZeroesSwap(self, nums: List[int]) -> None:
-        insert = 0
+        tracked = 0
+
         for i, num in enumerate(nums):
             if num != 0:
-                nums[insert], nums[i] = nums[i], nums[insert]
-                insert += 1
+                nums[i], nums[tracked] = nums[tracked], nums[i]
+                tracked += 1
 
 
 y = [0, 1, 0, 3, 12]
-Solution().moveZeroes(y)
+Solution().moveZeroesSwap(y)
 print(y)
